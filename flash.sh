@@ -1,26 +1,33 @@
 #!/bin/bash
-NUM=4
+NUM=1
 ROOT_PART=$(mount | grep " / "|cut -d\  -f1)
 SRC=${ROOT_PART%*p?}
 DST=$(ls -1 /dev/mmcblk?|grep -v $SRC)
 
 echo "$SRC => $DST"
-if false
-then
+echo -n "Do it ? yes/NO " ; read rep
 
-dd if=${SRC} of=${DST} bs=1M icount=1800 &
+
+if [[ "${rep}x" = "yesx" ]] 
+then
+dd if=/dev/zero of=$DST ds=1M count=10
+dd if=${SRC} of=${DST} bs=1M count=1900 &
 PID=$!
 echo "/proc/$PID"
 
 while [ -d /proc/${PID} ] ; do
-  sleep 1s
+  sleep 2s
   kill -USR1 ${PID}
-  sleep 9s
+  sleep 18s
 done
 fi
+sync
+blockdev --flushbufs ${destination}
+
 umount /target
 umount ${DST}p1
 fsck ${DST}p1
+tune2fs -L "niel-${num}" $DST
 mount ${DST}p1 /target
 sed -i "s/-x/-${NUM}/" /target/etc/hostname
 sed -i "s/NUM=$((NUM++))/NUM=$NUM/" /root/bbb-utils/flash.sh
