@@ -4,6 +4,8 @@ ROOT_PART=$(mount | grep " / "|cut -d\  -f1)
 SRC=${ROOT_PART%*p?}
 DST=$(ls -1 /dev/mmcblk?|grep -v $SRC)
 
+SRC="/media/img/my_rootfs-debian-8.0-console-armhf-2015-01-29-2gb.img"
+
 echo "$SRC => $DST"
 echo -n "Do it ? yes/NO " ; read rep
 
@@ -14,19 +16,6 @@ then
   pv <${SRC} >${DST} -Ss 1832M
 fi
 
-if false
-then
-dd if=/dev/zero of=$DST bs=1M count=10
-dd if=${SRC} of=${DST} bs=1M count=1832 &
-PID=$!
-echo "/proc/$PID"
-
-while [ -d /proc/${PID} ] ; do
-  sleep 2s
-  kill -USR1 ${PID}
-  sleep 18s
-done
-fi
 sync
 blockdev --flushbufs ${DST}
 
