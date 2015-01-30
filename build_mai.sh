@@ -1,5 +1,5 @@
 #!/bin/bash
-apt-get install \
+apt-get install -y \
 avahi-daemon bind9 btrfs-tools cloudprint-service \
 cron-apt curl dnsutils fail2ban hplip \
 locales logcheck lynx manpages nscd nslcd ntp ntpdate \
