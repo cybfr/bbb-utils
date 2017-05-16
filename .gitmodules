@@ -1,0 +1,3 @@
+[submodule "site/themes/hugo-theme-materpara"]
+	path = site/themes/hugo-theme-materpara
+	url = https://frv@framagit.org/frv/hugo-theme-materpara.git
