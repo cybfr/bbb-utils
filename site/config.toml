@@ -1,0 +1,70 @@
+languageCode = "fr"
+title = "Hugo materpara theme demo"
+baseurl = "bbb-utils"
+theme = "hugo-theme-materpara"
+
+[taxonomies]
+tag = "tags"
+category = "categories"
+
+[params]
+
+    myname = "François-Régis"
+
+    description = "A modern responsive front-end framework based on Material Design"
+    descriptionmiddle = "A modern responsive front-end framework based on Material Design"
+    descriptionfoot = "A modern responsive front-end framework based on Material Design"
+
+    copyright = "Made by <a class=\"brown-text text-lighten-3\" href=\"http://materializecss.com\">Materialize</a>"
+    logo = "logo.svg"
+    
+    background1 = "background1.jpg"
+    background2 = "background2.jpg"
+    background3 = "background3.jpg"
+    startlink = "https://materializecss.com/getting-started.html"
+    starttext = "Get started"
+    
+    [[params.navbar]]
+        text = "Source code"
+        href = "https://framagit.org/frv/hugo-theme-materpara"
+
+    [[params.navbar]]
+        text = "About"
+        href = "about/"
+
+    [[params.navbar]]
+        text = "Navbar link3"
+        href = "#"
+
+    [params.secondsection]
+      title = "Contact Us"
+      content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;"
+
+    [params.footer]
+      title = "Company Bio"
+      text = "We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated."
+       [[params.footer.links]]
+         title = "Settings"
+         [[params.footer.links.link]]
+           href = "#!"
+           text = "Setting 1"
+         [[params.footer.links.link]]
+           href = "#!"
+           text = "Setting 2"
+         [[params.footer.links.link]]
+           href = "#!"
+           text = "Setting 3"
+
+       [[params.footer.links]]
+         title = "Connect"
+         [[params.footer.links.link]]
+           href = "#!"
+           text = "Connect 1"
+         [[params.footer.links.link]]
+           href = "#!"
+           text = "Connect 2"
+         [[params.footer.links.link]]
+           href = "#!"
+           text = "Connect 3"
+              
+         
