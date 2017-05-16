@@ -6,7 +6,7 @@ pages:
   - sed  -i 's/baseurl = "\/"/baseurl = "https:\/\/frv.frama.io\/bbb-utils\/"/' config.toml
   artifacts:
     paths:
-    - public
+    - site/public
   only:
   - master
 variables:
